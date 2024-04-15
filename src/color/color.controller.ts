@@ -1,7 +1,6 @@
 import { Body, Controller, Get, NotFoundException, Post } from '@nestjs/common';
-import { CreateColorDto } from 'src/product/dto/color/create-color.dto';
 import { ColorService } from 'src/color/color.service';
-NotFoundException
+import { CreateColorDto } from './dtos/create-color.dto';
 
 @Controller('color')
 export class ColorController {

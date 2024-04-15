@@ -5,12 +5,11 @@ import {
 	JoinColumn,
 	JoinTable,
 	ManyToOne,
-	OneToOne,
 	PrimaryGeneratedColumn,
 	UpdateDateColumn,
 } from 'typeorm'
 import { Color } from '../../color/entities/color.entity'
-import { Product } from './product.entity'
+import { Product } from '../../product/entities/product.entity'
 import { Size } from '../../size/entities/size.entity'
 
 @Entity()
@@ -20,21 +19,21 @@ export class Stock {
 
 	@ManyToOne(() => Product, (product) => product.stock, {
 		cascade: true,
-        nullable: false
+		nullable: false,
 	})
 	@JoinTable()
-	products: Product[]
+	product: Product
 
-	@OneToOne(() => Color, {
-        nullable: false
-    })
+	@ManyToOne(() => Color, {
+		nullable: true,
+	})
 	@JoinColumn()
 	color: Color
 
-    @OneToOne(() => Size, {
-        nullable: false
-    })
-    @JoinColumn()
+	@ManyToOne(() => Size, {
+		nullable: true,
+	})
+	@JoinColumn()
 	size: Size
 
 	@Column()

@@ -1,0 +1,29 @@
+POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+    "product": {
+        "name": "Blusa Fulo",
+        "description": "Blusa 100% algodão",
+        "price": 60,
+        "promotionalPrice": 55.99
+    },
+    "stock": [
+        {
+            "quantity": 1,
+            "colorId": 2,
+            "sizeId": 1
+        },
+        {
+            "quantity": 1,
+            "colorId": 3,
+            "sizeId": 1
+        }
+    ]
+}
+
+
+
+###
+GET http://localhost:3000/product
+Content-Type: application/json

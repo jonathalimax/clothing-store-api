@@ -1,0 +1,21 @@
+POST http://localhost:3000/stock
+Content-Type: application/json
+
+{
+    "quantity": 2,
+    "productId": 3,
+    "colorId": 2,
+    "sizeId": 1
+}
+
+###
+GET http://localhost:3000/stock
+Content-Type: application/json
+
+###
+GET http://localhost:3000/stock/1
+Content-Type: application/json
+
+###
+GET http://localhost:3000/stock/filtered?productId=3
+Content-Type: application/json
